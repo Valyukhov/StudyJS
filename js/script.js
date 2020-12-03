@@ -11,4 +11,4 @@ console.log(--decr);
 const isChecked = true,
         isClose = false;
 console.log(isChecked && isClose);
-console.log("Hello World");
+console.log("Priuvet");
