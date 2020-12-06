@@ -1,74 +1,93 @@
 
 
-const numberOfFilms = +prompt ('Сколько фильмов вы уже посмотрели?','');
+let numberOfFilms;
+
+function start() {
+     numberOfFilms = +prompt ('Сколько фильмов вы уже посмотрели?','');
+
+     while (numberOfFilms == ''|| numberOfFilms == null || isNaN(numberOfFilms))  {
+
+        numberOfFilms = +prompt ('Сколько фильмов вы уже посмотрели?','');
+     }
+}
+
+start();
+
+function rememberMyFilms() {
+    for (let i=0; i<2 ; i++) {
+        const a = prompt('Один из последних просмотренных фильмов?', ''),
+        b = prompt('На сколько оцените его?','');
+    
+        if (a != null && b!=null && a!='' && b!=''&& a.length < 50) {
+            personalMovieDB.movies[a] = b;
+            console.log ('Done!');
+        } else {
+            console.log('error');
+            i--;
+        }
+        
+    }
+
+}
+// rememberMyFilms();
+
 const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
     actors: {},
     genres: [],
-    privat: false
-};
-
-if (personalMovieDB.count <10) {
-    console.log ('Просмотрено мало фильмов');
-
-} else if ( personalMovieDB.count >=10 && personalMovieDB.count <=30 ) {
-    console.log ('Вы классический зритель');
-} else if ( personalMovieDB.count >30 ) {
-    console.log ('Вы  киноман');
-} else {
-     console.log ('Произошла ошибка!');
+    privat: true
 };
 
 
-for (let i=0; i<2 ; i++) {
-    const a = prompt('Один из последних просмотренных фильмов?', ''),
-    b = prompt('На сколько оцените его?','');
 
-    if (a != null && b!=null && a!='' && b!=''&& a.length < 50) {
-        personalMovieDB.movies[a] = b;
-        console.log ('Done!');
-    } else {
-        console.log('error');
-        i--;
-    }
+function detectPersonalLevel() {
+    if (personalMovieDB.count <10) {
+        console.log ('Просмотрено мало фильмов');
     
+    } else if ( personalMovieDB.count >=10 && personalMovieDB.count <=30 ) {
+        console.log ('Вы классический зритель');
+    } else if ( personalMovieDB.count >30 ) {
+        console.log ('Вы  киноман');
+    } else {
+         console.log ('Произошла ошибка!');
+    };
 }
 
+// detectPersonalLevel();
 
-console.log (personalMovieDB);
+function showMyDB(hidden) {
 
-// function showFirstMessage(text) {
-//     console.log(text);
-//     let num=20
-// }
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+showMyDB(personalMovieDB.privat);
 
-// showFirstMessage('444444444444444')
+function writeYourGenres() {
+    for (let i = 1; i<=3;i++) {
+        const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+        personalMovieDB.genres[i - 1] = genre;
+        }
+}
+writeYourGenres();
 
-// const logger  = function (){
 
-//     console.log('Hello');
-// };
-// logger();
 
-// const calc = (a, b) => {return a + b};
-const str = 'test';
-let str1='io';
-console.log(str1 = str.toUpperCase());
 
-console.log(str);
-console.log(str1);
 
-const fruit = 'Some fruit';
-console.log(fruit.indexOf("fruit"));
 
-const logg = "Hello world!";
-console.log(logg.slice(6));
-console.log(logg.substring(6,11));
-console.log(logg.substr(6,3));
 
-const num = 12.2;
-console.log(Math.round(num));
+/* Задание на урок:
 
-const test = '12.2px';
-console.log (parseFloat(test));
+1) Первую часть задания повторить по уроку
+
+2) Создать функцию showMyDB, которая будет проверять свойство privat. Если стоит в позиции
+false - выводит в консоль главный объект программы
+
+3) Создать функцию writeYourGenres в которой пользователь будет 3 раза отвечать на вопрос 
+"Ваш любимый жанр под номером ${номер по порядку}". Каждый ответ записывается в массив данных
+genres
+
+P.S. Функции вызывать не обязательно*/
+
