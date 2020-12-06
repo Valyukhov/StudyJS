@@ -48,19 +48,39 @@ console.log (personalMovieDB);
 // }
 
 // (num === 50)  ? console.log('Ok') : console.log('Error');
-const num = 56;
+// const num = 56;
 
-switch (num) {
-    case 49: 
-        console.log('Неверно');
-        break;
-    case 100:
-        console.log('Много');
-        break;
-    case 50:
-        console.log('В точку!');
-        break;
-    default: 
-        console.log ('Error 4404');
-        break;   
-}
+// switch (num) {
+//     case 49: 
+//         console.log('Неверно');
+//         break;
+//     case 100:
+//         console.log('Много');
+//         break;
+//     case 50:
+//         console.log('В точку!');
+//         break;
+//     default: 
+//         console.log ('Error 4404');
+//         break;   
+// }
+let num = 50;
+
+// while (num <= 55) {
+//     console.log(num);
+//     ++num;
+// }
+
+// do {
+//     console.log(num);
+//     num++;
+// }
+// while (num <= 55);
+
+for ( let i = 1; i<8; i++) {
+    if (i === 6) {
+       
+        continue;
+    };
+    console.log(i);
+};
