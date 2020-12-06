@@ -37,3 +37,30 @@ const a = prompt('Один из последних просмотренных ф
 personalMovieDB.movies[a] = b
 personalMovieDB.movies[c] = d
 console.log (personalMovieDB);
+
+// const num = 50;
+// if (num < 49) {
+//     console.log('Error');
+// } else if (num > 100) {
+//     console.log('Много');
+// } else {
+//     console.log ('Ok!');
+// }
+
+// (num === 50)  ? console.log('Ok') : console.log('Error');
+const num = 56;
+
+switch (num) {
+    case 49: 
+        console.log('Неверно');
+        break;
+    case 100:
+        console.log('Много');
+        break;
+    case 50:
+        console.log('В точку!');
+        break;
+    default: 
+        console.log ('Error 4404');
+        break;   
+}
