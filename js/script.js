@@ -38,17 +38,37 @@ for (let i=0; i<2 ; i++) {
 
 console.log (personalMovieDB);
 
-function showFirstMessage(text) {
-    console.log(text);
-    let num=20
-}
+// function showFirstMessage(text) {
+//     console.log(text);
+//     let num=20
+// }
 
-showFirstMessage('444444444444444')
+// showFirstMessage('444444444444444')
 
-const logger  = function (){
+// const logger  = function (){
 
-    console.log('Hello');
-};
-logger();
+//     console.log('Hello');
+// };
+// logger();
 
-const calc = (a, b) => {return a + b};
+// const calc = (a, b) => {return a + b};
+const str = 'test';
+let str1='io';
+console.log(str1 = str.toUpperCase());
+
+console.log(str);
+console.log(str1);
+
+const fruit = 'Some fruit';
+console.log(fruit.indexOf("fruit"));
+
+const logg = "Hello world!";
+console.log(logg.slice(6));
+console.log(logg.substring(6,11));
+console.log(logg.substr(6,3));
+
+const num = 12.2;
+console.log(Math.round(num));
+
+const test = '12.2px';
+console.log (parseFloat(test));
